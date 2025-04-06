@@ -1,113 +1,75 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang="en">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Modern GitHub-integrated task tracking UI inspired by Huly.io" />
-  <meta name="author" content="Your Name or Brand" />  <title>Huly.io Inspired UI | GitHub Sync</title>  <!-- Tailwind CSS CDN -->  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />  <!-- Custom Styles -->  <link rel="stylesheet" href="assets/css/styles.css" />  <!-- Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #0f0f0f;
+  <title>Everything App - Huly Style</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html { scroll-behavior: smooth; font-family: sans-serif; }
+    section {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: white;
     }
-
-    .hero-overlay {
-      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(15, 15, 15, 0.9));
-    }
-
-    .animated-glow-box {
-      position: relative;
-      border-radius: 1rem;
-      overflow: hidden;
-      background-color: #111827;
-      z-index: 1;
-    }
-
-    .animated-glow-box::before,
-    .animated-glow-box::after {
-      content: "";
+    video.bg-video {
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(0, 183, 255, 0.3), transparent 60%),
-                  radial-gradient(circle, rgba(255, 89, 0, 0.25), transparent 60%);
-      animation: moveGlow 6s linear infinite;
-      z-index: 0;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
     }
-
-    .animated-glow-box::after {
-      animation-delay: 3s;
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+      z-index: -1;
     }
-
-    @keyframes moveGlow {
-      0% {
-        transform: translate(0%, 0%) rotate(0deg);
-      }
-      50% {
-        transform: translate(25%, 25%) rotate(180deg);
-      }
-      100% {
-        transform: translate(0%, 0%) rotate(360deg);
-      }
+    .content {
+      padding: 2rem;
+      max-width: 1200px;
+      width: 100%;
+      text-align: center;
     }
-
-    .animated-glow-box-content {
-      position: relative;
-      z-index: 1;
+    .screenshot {
+      width: 100%;
+      max-width: 1000px;
+      border-radius: 16px;
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+      margin-top: 2rem;
     }
-  </style></head><body class="bg-black text-white">
-  <!-- Hero Section with Video Background -->
-  <section class="relative h-screen w-full overflow-hidden">
-    <video class="absolute top-0 left-0 w-full h-full object-cover" autoplay muted loop playsinline>
-      <source src="assets/videos/hero.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video><div class="absolute inset-0 hero-overlay flex items-center justify-center text-center px-4">
-  <div class="max-w-3xl">
-    <h1 class="text-4xl md:text-6xl font-bold mb-4">Your AI Commerce Platform</h1>
-    <p class="text-lg md:text-xl text-gray-300">Scan, Search, Discover — Image to Product in One Click</p>
-
-    <div class="mt-10 p-6 md:p-10 animated-glow-box">
-      <div class="animated-glow-box-content">
-        <p class="text-white font-semibold text-xl">Try Our AI Visual Search Demo</p>
-      </div>
+  </style>
+</head>
+<body>
+  <!-- Section 1: Everything App -->
+  <section id="everything-app">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="assets/videos/hero.mp4" type="video/mp4" />
+    </video>
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 style="font-size: 3rem; font-weight: bold;">Everything App for your teams</h1>
+      <p style="font-size: 1.2rem; margin-top: 1rem;">Huly, an open-source platform, serves as an all-in-one replacement of Linear, Jira, Slack, and Notion.</p>
+      <button style="margin-top: 1.5rem; padding: 0.8rem 1.5rem; border-radius: 30px; background: #ff7043; border: none; color: white; font-weight: bold; cursor: pointer;">TRY IT FREE →</button>
+      <img src="assets/images/front-ui.jpg" alt="Front UI Screenshot" class="screenshot" />
     </div>
-  </div>
-</div>
-
-  </section>  <!-- GitHub Sync Section -->  <section class="px-6 py-20">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-4xl md:text-5xl font-bold mb-4">Sync with GitHub.<br />Both ways.</h2>
-      <p class="text-lg text-gray-300 mb-12">Manage your tasks efficiently with Huly's bidirectional GitHub synchronization.<br />Use Huly as an advanced front-end for GitHub Issues and GitHub Projects.</p><div class="relative glow-box p-6 bg-gray-900">
-    <img src="assets/images/github-sync-ui.png" alt="GitHub UI Screenshot" class="rounded-xl w-full" />
-  </div>
-
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16 text-center">
-    <div>
-      <h3 class="text-xl font-semibold mb-2">Two-way synchronization</h3>
-      <p class="text-gray-400">Integrate your task tracker with GitHub to sync changes instantly.</p>
+  </section>  <!-- Section 2: GitHub Sync -->  <section id="github-sync">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="assets/videos/github-sync.mp4" type="video/mp4" />
+    </video>
+    <div class="overlay"></div>
+    <div class="content">
+      <h1 style="font-size: 3rem; font-weight: bold;">Sync with GitHub. Both ways.</h1>
+      <p style="font-size: 1.2rem; margin-top: 1rem;">Manage tasks efficiently with Huly’s GitHub sync – bidirectional and powerful.</p>
+      <img src="assets/images/github-sync-ui.jpg" alt="GitHub Sync Screenshot" class="screenshot" />
     </div>
-    <div>
-      <h3 class="text-xl font-semibold mb-2">Private tasks</h3>
-      <p class="text-gray-400">Integration and management of multiple data repositories effectively.</p>
-    </div>
-    <div>
-      <h3 class="text-xl font-semibold mb-2">Multiple repositories</h3>
-      <p class="text-gray-400">Organize multiple projects for more effective planning and collaboration.</p>
-    </div>
-    <div>
-      <h3 class="text-xl font-semibold mb-2">Milestone migration</h3>
-      <p class="text-gray-400">Seamless migration of key project milestones between repositories.</p>
-    </div>
-    <div>
-      <h3 class="text-xl font-semibold mb-2">Track progress</h3>
-      <p class="text-gray-400">Keep track of GitHub contributions and changes within your workspace.</p>
-    </div>
-    <div>
-      <h3 class="text-xl font-semibold mb-2">Advanced filtering</h3>
-      <p class="text-gray-400">Precise project data search with advanced filtering capabilities.</p>
-    </div>
-  </div>
-</div>
-
   </section>
-</body></html>
+</body>
+</html>
