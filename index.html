@@ -1,76 +1,29 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Everything App - Huly Style</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Everything App for Your Teams</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body, html { scroll-behavior: smooth; font-family: sans-serif; }
-    section {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-    }
-    video.bg-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 50%;
-    min-height: 50%;
-    object-fit: contain;
-    z-index: -1;
-    }
-    .overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
-      z-index: -1;
-    }
-    .content {
-      padding: 2rem;
-      max-width: 1200px;
-      width: 100%;
-      text-align: center;
-    }
-    .screenshot {
-      width: 100%;
-      max-width: 1000px;
-      border-radius: 16px;
-      box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
-      margin-top: 2rem;
-    }
-  </style>
 </head>
 <body>
-  <!-- Section 1: Everything App -->
-  <section id="everything-app">
-    <video autoplay muted loop playsinline class="bg-video">
-      <source src="assets/videos/hero.mp4" type="video/mp4" />
+
+  <!-- Background Video -->
+  <div class="video-wrapper">
+    <video class="bg-video" autoplay muted loop playsinline>
+      <source src="assets/videos/hero.mp4" type="video/mp4">
     </video>
-    <div class="overlay"></div>
-    <div class="content">
-      <h1 style="font-size: 3rem; font-weight: bold;">Everything App for your teams</h1>
-      <p style="font-size: 1.2rem; margin-top: 1rem;">Huly, an open-source platform, serves as an all-in-one replacement of Linear, Jira, Slack, and Notion.</p>
-      <button style="margin-top: 1.5rem; padding: 0.8rem 1.5rem; border-radius: 30px; background: #ff7043; border: none; color: white; font-weight: bold; cursor: pointer;">TRY IT FREE →</button>
-      <img src="assets/images/front-ui.jpg" alt="Front UI Screenshot" class="screenshot" />
+  </div>
+
+  <!-- Content -->
+  <header class="hero-section">
+    <div class="container">
+      <img src="assets/images/logo.svg" alt="Logo" class="logo">
+      <h1>Everything App<br><span>for your teams</span></h1>
+      <p>Huly, an open-source platform, serves as an all-in-one replacement of Linear, Jira, Slack, and Notion.</p>
+      <a href="#" class="cta-button">Try it free →</a>
     </div>
-  </section>  <!-- Section 2: GitHub Sync -->  <section id="github-sync">
-    <video autoplay muted loop playsinline class="bg-video">
-      <source src="assets/videos/github-sync.mp4" type="video/mp4" />
-    </video>
-    <div class="overlay"></div>
-    <div class="content">
-      <h1 style="font-size: 3rem; font-weight: bold;">Sync with GitHub. Both ways.</h1>
-      <p style="font-size: 1.2rem; margin-top: 1rem;">Manage tasks efficiently with Huly’s GitHub sync – bidirectional and powerful.</p>
-      <img src="assets/images/github-sync-ui.jpg" alt="GitHub Sync Screenshot" class="screenshot" />
-    </div>
-  </section>
+  </header>
+
 </body>
 </html>
