@@ -9,13 +9,51 @@
       color: white;
     }
 
-    .glow-box {
-      box-shadow: 0 0 40px 10px rgba(0, 183, 255, 0.2), 0 0 60px 15px rgba(255, 89, 0, 0.15);
-      border-radius: 1rem;
+    .hero-overlay {
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(15, 15, 15, 0.9));
     }
 
-    .hero-overlay {
-      background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(15,15,15,0.9));
+    .animated-glow-box {
+      position: relative;
+      border-radius: 1rem;
+      overflow: hidden;
+      background-color: #111827;
+      z-index: 1;
+    }
+
+    .animated-glow-box::before,
+    .animated-glow-box::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0, 183, 255, 0.3), transparent 60%),
+                  radial-gradient(circle, rgba(255, 89, 0, 0.25), transparent 60%);
+      animation: moveGlow 6s linear infinite;
+      z-index: 0;
+    }
+
+    .animated-glow-box::after {
+      animation-delay: 3s;
+    }
+
+    @keyframes moveGlow {
+      0% {
+        transform: translate(0%, 0%) rotate(0deg);
+      }
+      50% {
+        transform: translate(25%, 25%) rotate(180deg);
+      }
+      100% {
+        transform: translate(0%, 0%) rotate(360deg);
+      }
+    }
+
+    .animated-glow-box-content {
+      position: relative;
+      z-index: 1;
     }
   </style></head><body class="bg-black text-white">
   <!-- Hero Section with Video Background -->
@@ -28,8 +66,10 @@
     <h1 class="text-4xl md:text-6xl font-bold mb-4">Your AI Commerce Platform</h1>
     <p class="text-lg md:text-xl text-gray-300">Scan, Search, Discover — Image to Product in One Click</p>
 
-    <div class="mt-10 p-6 md:p-10 glow-box bg-gray-900/80 backdrop-blur-md rounded-2xl transition-all">
-      <p class="text-white font-semibold text-xl">Try Our AI Visual Search Demo</p>
+    <div class="mt-10 p-6 md:p-10 animated-glow-box">
+      <div class="animated-glow-box-content">
+        <p class="text-white font-semibold text-xl">Try Our AI Visual Search Demo</p>
+      </div>
     </div>
   </div>
 </div>
