@@ -1,4 +1,3 @@
-/* Prevent overflow and fix body */
 body, html {
   margin: 0;
   padding: 0;
@@ -8,10 +7,9 @@ body, html {
   color: white;
   height: 100%;
 }
-
-/* Video wrapper */
 .video-wrapper {
   position: fixed;
+  aspect-ratio: 16 / 9;
   top: 0;
   left: 0;
   width: 100vw;
@@ -19,8 +17,6 @@ body, html {
   overflow: hidden;
   z-index: -1;
 }
-
-/* Maintain 16:9 aspect ratio, align to left */
 .video-wrapper video.bg-video {
   position: absolute;
   height: 100vh;
