@@ -2,7 +2,7 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 9 / 16;
   font-family: 'Inter', sans-serif;
   background: black;
 }
@@ -12,8 +12,7 @@ html, body {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
-  width: auto;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   z-index: -1;
 }
